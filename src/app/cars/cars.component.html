@@ -1,11 +1,15 @@
+<input type="text" class="form-control" [(ngModel)]="Carname">
 <button  class="btn btn-primary" (click)="addCar()"> Add car</button>
-<p>{{AddCars}}</p>
+<p *ngIf="!CarStatus; else succesStatus">Not Added car</p>
+<ng-template #succesStatus>
+<p>Added car</p>
+</ng-template>
 <hr>
-
-<app-car></app-car>
-<app-car></app-car>
- <hr>
- <input type="text" class="form-control" (keyup.enter)='onKeyUp($event)'>
- <input type="text" class="form-control" [(ngModel)]="inputText">
-
- <p>{{inputText}}</p>
+<ul>
+    <li *ngFor="let date of dates; let number = index">
+        <div>
+            <b>{{number + 1}}</b>
+            {{date | date | upperca  se }}
+        </div>
+    </li>
+</ul>
