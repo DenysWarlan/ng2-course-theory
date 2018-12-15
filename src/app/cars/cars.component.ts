@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TargetLocator } from 'selenium-webdriver';
+
 
 @Component({
   selector: 'app-cars',
@@ -7,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent {
 
-
-
+     AddCars = '';
+     inputText = '';
       constructor () {
 
       }
+      addCar() {
+        this.AddCars = 'Added Car';
+      }
+  onKeyUp(event) {
+  this.inputText = event.target.value;
+    }
 }
 
