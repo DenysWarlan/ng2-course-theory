@@ -8,25 +8,21 @@ import { TargetLocator } from 'selenium-webdriver';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent {
+  carName = '';
+  carYear = 2015;
 
-     CarName = '';
-     CarStatus = false;
-     cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Bentli', 'Lada'];
-     dates = [
-       new Date(2025, 3, 4),
-       new Date(2024, 4, 4),
-       new Date(2023, 5, 4),
-       new Date(2022, 6, 4),
-       new Date(2021, 7, 4),
-       new Date(2020, 8, 4)
-     ];
-      constructor () {
+  cars: [{ name: string, year: number }] = [{
+    name: 'Ford',
+    year: 2015
+  }];
 
-      }
-      addCar() {
-        this.CarStatus = true;
-        this.cars.push(this.CarName);
-        this.CarName = '';
-      }
+  addCar() {
+    this.cars.push({
+      name: this.carName,
+      year: this.carYear
+    });
+    this.carName = ' ';
+    this.carYear = 2015;
+  }
 }
 
