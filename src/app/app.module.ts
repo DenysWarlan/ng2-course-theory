@@ -8,12 +8,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
+import { AddCarComponent } from './add-car/add-car.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
     CarComponent,
+    AddCarComponent,
   ],
   imports: [
     BrowserModule,
