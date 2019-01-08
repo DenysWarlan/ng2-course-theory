@@ -1,3 +1,7 @@
-.bigText{
-    font-size: 150%;
+p{
+    font-size: 23px;
+}
+
+hr {
+  border-top: 1px solid rgb(128, 128, 128);
 }
