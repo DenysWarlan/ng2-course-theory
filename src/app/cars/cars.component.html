@@ -1,10 +1,25 @@
-<div class="col-4">
-  <p>Form add car</p>
-  <hr />
-  <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
+<div class="conrainer">
+  <div class="row">
+    <div class="col-4">
+      <p>Form add car</p>
+      <hr />
+      <app-add-car (onAddCar)="updateCarList($event)"></app-add-car>
+    </div>
+    <div class="col-4">
+      <p>Form change car</p>
+      <hr />
+      <input type="text" class="form-control" #carChangeNameInput>
+      <input type="text" class="form-control mt-1" #carItem>
+      <button class="btn btn-success mt-1" (click)="changecarmodel();">Change model car</button>
+      <button class="btn btn-danger mt-1" (click)="DeletedCar();">Deleted Car</button>
+    </div>
+  </div>
 </div>
 <hr />
 <div class="list-group">
-  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car"></app-car>
+  <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" [name]="car.name">
+    <h4 class="list-group-item-heading">Model: {{ car.name }}</h4>
+    <p class="list-group-item-text">Year :  {{ car.year }}</p>
+  </app-car>
 </div>
 
